@@ -1,5 +1,5 @@
-package basics                  //
-import java.util.*              // To demonstrate Scanner Class (not mandatory to use)
+package basics                  // contains one or more Kotlin files, linked by package header
+import java.util.Scanner           // To demonstrate Scanner Class (not mandatory to use)
 
 /*
 Kotlin
@@ -71,7 +71,7 @@ Loops (for)
 	- for (<variable> in <List>){
     	println(<variable>)
     	}
-    - for((<variable1, variable2> in <List>)){
+    - for((<variable1, variable2>) in <List>){
     		println($<variable1> $<variable2>)
     	}
 Array
@@ -100,7 +100,7 @@ Functions
         	return a+b
         }
         
-    - This type of agreement writing is called Pascals Method
+    - This type of argument writing is inspired from Pascal language
     - <name of argument> : <data type>
  */
 
@@ -110,38 +110,57 @@ fun main() {
     println("world!!!") // gives line break
     println("Hi Haresh")
 
+    // initializing variables
     val firstName = "Haresh"
     val lastName = "Nayak"
-    val age = 2
+    val age = 20
+
+    // printing variables with string
     println("Name : $firstName $lastName \nAge : $age")
 
+    // Taking input from user using java.util.Scanner
     val read = Scanner(System.`in`)
-    val fullName = read.nextLine()
-    println("Full name entered : $fullName")
+    print("Enter Session name")
+    val sessionName = read.nextLine()
+    println("session name entered : $sessionName")
 
+    // Taking input with Scanner class
+    print("Which language you love : ")
+    val language = readLine()
+    println(language)
+
+    // Switch case (Keyword used in Kotlin - when)
     when(age){
         1 -> println("age is one")
+
+        // To give a range
         in 2..10 -> println("age between 2 and 10")
         in 11..20 -> println("age between 11 and 20")
+
+        // Set a default value
         else ->{
             println("age not in range")
         }
     }
 
-    val friends = arrayOf("Himesh", "Amandeep", "Himanshu", "Shashank")
-    val numbs = arrayOf(1,3,4,4)
+    // Arrays
+    val appsInKotlin = arrayOf("Google", "Zomato", "Netflix", "Slack")
+    val numbs = arrayOf(13,21,67,19)
 
+    // Loops
+    // For loop
     for (num in numbs){
         println("$num")
     }
-    for (name in friends){
-        println(name)
+
+    // While loop
+    val i  = 0
+    while (i < appsInKotlin.size ){
+        appsInKotlin[i]
     }
 
-
     println()
-
-    for((index, name) in friends.withIndex()){
+    for((index, name) in appsInKotlin.withIndex()){
         println("${index+1} $name")
     }
 }

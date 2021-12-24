@@ -4,7 +4,7 @@ import java.util.Scanner           // To demonstrate Scanner Class (not mandator
 /*
 Kotlin
 Features
-	- statically typed
+	- statically typed // datatype is configured in compile time and not in run time
 	- inter-convertible with java
 	- safe and concise to use
     

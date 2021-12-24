@@ -1,5 +1,5 @@
 package tasks
+ fun main(){
 
-fun main(){
 
-}
+ }

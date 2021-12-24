@@ -6,15 +6,22 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.hareshnayak.affirmationsapp.adapter.ItemAdapter
 import com.hareshnayak.affirmationsapp.data.Datasource
+import com.hareshnayak.affirmationsapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding : ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+
+        setContentView(view)
         // Initialize data.
         val myDataset = Datasource().loadAffirmations()
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+        val recyclerView = binding.recyclerView
         recyclerView.adapter = ItemAdapter(this, myDataset)
 
         // Use this setting to improve performance if you know that changes
